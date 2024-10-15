@@ -1,0 +1,218 @@
+#include "FIR_coeff.h"
+#include "system_config.h"
+#include "arm_math.h"
+#include "FIR_filter.h"
+#include "IIR_filter.h"
+#include "stm32f7_wm8994_init.h"
+#include "main.h"
+#include "notes.h"
+#include "arm_math.h"
+#include "tickTimer.h"
+#include "signalTables.h"
+
+#pragma GCC optimize ("O0")
+
+static void usbUserProcess(USBH_HandleTypeDef *pHost, uint8_t vId);
+static void midiApplication();
+
+USBH_HandleTypeDef hUSBHost;
+static uint8_t midiReceiveBuffer[MIDI_BUF_SIZE];
+static __IO uint32_t USBReceiveAvailable = 0;
+static AppState appState = APP_IDLE;
+
+extern int16_t rx_sample_L;
+extern int16_t rx_sample_R;
+extern int16_t tx_sample_L;
+extern int16_t tx_sample_R;
+
+
+float Fe = 44100.0;
+float Fwave = 220.0;
+
+int N = 1000; // taille table des sinus
+float32_t theta = 0.0; // angke actuel
+float32_t delta_theta = 0.0; // incrément de l'angle chaque pas
+
+
+float32_t x[N_FILTER];
+//============================================================================
+void BSP_AUDIO_SAI_Interrupt_CallBack()
+{
+  int16_t x_L = 0;
+  int16_t x_R = 0;
+  int16_t y_L = 0;
+  int16_t y_R = 0;
+
+  int signal_index = 0;
+
+  BSP_LED_On(LED1);
+
+  // SIGNAL PROCESSING ALGORITHM
+  delta_theta = 2.0 * 3.14159265359 * (Fwave/Fe);
+  theta += delta_theta;
+
+  if (theta >= 2.0 * 3.14159265359)
+  {
+	  theta -= 2.0 * 3.14159265359;
+  }
+
+  signal_index = (int)((N -1) * (theta / (2.0*3.14159265359)));
+
+  x_L = square_int[signal_index];
+  x_R = square_int[signal_index];
+
+  signal_index+=2;
+
+  if (signal_index >= N)
+  {
+	  signal_index = 0;
+  }
+
+  y_L = x_L;
+  y_R = x_R;
+
+
+
+  tx_sample_L = (int16_t)y_L ;
+  tx_sample_R = (int16_t)y_R;
+
+  BSP_LED_Off(LED1);
+
+  return;
+}
+
+//============================================================================
+//		INTERRUPTION CALLBACK ON TIMER PERIOD
+//============================================================================
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	if (htim->Instance==TIM5)
+	{
+
+	}
+}
+//============================================================================
+int main(void)
+{
+	  HAL_Init();
+	  MPU_Config();         // configure the MPU attributes as write-through
+	  CPU_CACHE_Enable();   // enable the CPU cache
+	  SystemClock_Config(); // configure the system clock to 200 Mhz
+
+	  BSP_LED_Init(LED1);   // initialise LED on GPIO pin P   (also accessible on arduino header)
+	  BSP_GPIO_Init();      // initialise diagnostic GPIO pin P   (accessible on arduino header)
+	  BSP_PB_Init(BUTTON_KEY, BUTTON_MODE_GPIO); // configure the  blue user pushbutton in GPIO mode
+	  BSP_SDRAM_Init();
+
+	  USBH_Init(&hUSBHost, usbUserProcess, 0);
+	  USBH_RegisterClass(&hUSBHost, USBH_MIDI_CLASS);
+	  USBH_Start(&hUSBHost);
+
+	  HAL_Delay(200);
+
+	 // tickTimerInit(1);
+
+	  stm32f7_wm8994_init(AUDIO_FREQUENCY_44K,
+						  IO_METHOD_INTR,
+						  INPUT_DEVICE_INPUT_LINE_1,
+						  OUTPUT_DEVICE_HEADPHONE,
+						  WM8994_HP_OUT_ANALOG_GAIN_0DB,
+						  WM8994_LINE_IN_GAIN_0DB,
+						  WM8994_DMIC_GAIN_9DB,
+						  0,
+						  0);
+
+  while(1)
+  {
+			midiApplication();
+			USBH_Process(&hUSBHost);
+  }
+}
+//=================================================================
+void usbUserProcess(USBH_HandleTypeDef *usbHost, uint8_t eventID) {
+	UNUSED(usbHost);
+	switch (eventID) {
+	case HOST_USER_SELECT_CONFIGURATION:
+		break;
+	case HOST_USER_DISCONNECTION:
+		appState = APP_DISCONNECT;
+		BSP_LED_Off(LED_GREEN);
+		break;
+	case HOST_USER_CLASS_ACTIVE:
+		appState = APP_READY;
+		BSP_LED_On(LED_GREEN);
+		break;
+	case HOST_USER_CONNECTION:
+		appState = APP_START;
+		break;
+	default:
+		break;
+	}
+}
+//=================================================================
+void midiApplication(void)
+{
+	switch (appState) {
+	case APP_READY:
+		USBH_MIDI_Receive(&hUSBHost, midiReceiveBuffer, MIDI_BUF_SIZE);
+		appState = APP_RUNNING;
+		break;
+	case APP_RUNNING:
+		if (USBReceiveAvailable) {
+			USBReceiveAvailable = 0;
+			USBH_MIDI_Receive(&hUSBHost, midiReceiveBuffer, MIDI_BUF_SIZE);
+		}
+		break;
+	case APP_DISCONNECT:
+		appState = APP_IDLE;
+		USBH_MIDI_Stop(&hUSBHost);
+		break;
+	default:
+		break;
+	}
+}
+//=================================================================
+
+int tab_midi_log[100];
+
+void processMidiPackets() {
+	static int i=0;
+
+	uint8_t *ptr = midiReceiveBuffer;
+	uint16_t numPackets = USBH_MIDI_GetLastReceivedDataSize(&hUSBHost)/4;
+
+	if (numPackets != 0)
+	{
+		while (numPackets--)
+		{
+						ptr++;
+						uint32_t type = *ptr++;
+						uint32_t subtype = *ptr++;
+						uint32_t vel = *ptr++;
+
+						tab_midi_log[i]=type;
+						i=(i+1)%100;
+						tab_midi_log[i]=subtype;
+						i=(i+1)%100;
+						tab_midi_log[i]=vel;
+						i=(i+1)%100;
+
+						type = type & 0xF0; // ignore channel
+						switch(type)
+						{
+							case 0x90 : // Note on
+										break;
+							case 0x80 : // Note off
+										break;
+							default : break;
+						}
+				}
+	}
+}
+//=================================================================
+void USBH_MIDI_ReceiveCallback(USBH_HandleTypeDef *phost) {
+		processMidiPackets();
+	USBReceiveAvailable = 1;
+}
+//=================================================================
+

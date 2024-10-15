@@ -1,0 +1,83 @@
+2022-09-07 15:38:26,752 [INFO] Activator:177 - 
+
+
+2022-09-07 15:38:26,754 [INFO] Activator:178 - !SESSION log4j initialized
+2022-09-07 15:38:27,308 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.mcu.1925593350 uses a null category that is invalid in its context. The option was ignored.
+2022-09-07 15:38:27,311 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.fpu.1059024783 uses a null category that is invalid in its context. The option was ignored.
+2022-09-07 15:38:27,313 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.floatabi.1897826933 uses a null category that is invalid in its context. The option was ignored.
+2022-09-07 15:38:27,315 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.board.390283820 uses a null category that is invalid in its context. The option was ignored.
+2022-09-07 15:38:27,477 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.mcu.816521159 uses a null category that is invalid in its context. The option was ignored.
+2022-09-07 15:38:27,479 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.fpu.1371410236 uses a null category that is invalid in its context. The option was ignored.
+2022-09-07 15:38:27,481 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.floatabi.11428074 uses a null category that is invalid in its context. The option was ignored.
+2022-09-07 15:38:27,483 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.board.1222815949 uses a null category that is invalid in its context. The option was ignored.
+2022-09-07 15:38:29,542 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.mcu.1925593350 uses a null category that is invalid in its context. The option was ignored.
+2022-09-07 15:38:29,544 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.fpu.1059024783 uses a null category that is invalid in its context. The option was ignored.
+2022-09-07 15:38:29,545 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.floatabi.1897826933 uses a null category that is invalid in its context. The option was ignored.
+2022-09-07 15:38:29,546 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.board.390283820 uses a null category that is invalid in its context. The option was ignored.
+2022-09-07 15:38:29,573 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.mcu.816521159 uses a null category that is invalid in its context. The option was ignored.
+2022-09-07 15:38:29,575 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.fpu.1371410236 uses a null category that is invalid in its context. The option was ignored.
+2022-09-07 15:38:29,576 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.floatabi.11428074 uses a null category that is invalid in its context. The option was ignored.
+2022-09-07 15:38:29,578 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.board.1222815949 uses a null category that is invalid in its context. The option was ignored.
+2022-09-07 15:38:30,825 [ERROR] AnalyticsContext:980 - The ST intranet updater server is unknown: mcucrossselector.codex.cro.st.com
+2022-09-07 15:39:33,158 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.mcu.1925593350 uses a null category that is invalid in its context. The option was ignored.
+2022-09-07 15:39:33,161 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.fpu.1059024783 uses a null category that is invalid in its context. The option was ignored.
+2022-09-07 15:39:33,163 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.floatabi.1897826933 uses a null category that is invalid in its context. The option was ignored.
+2022-09-07 15:39:33,166 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.board.390283820 uses a null category that is invalid in its context. The option was ignored.
+2022-09-07 15:39:33,214 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.mcu.816521159 uses a null category that is invalid in its context. The option was ignored.
+2022-09-07 15:39:33,215 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.fpu.1371410236 uses a null category that is invalid in its context. The option was ignored.
+2022-09-07 15:39:33,216 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.floatabi.11428074 uses a null category that is invalid in its context. The option was ignored.
+2022-09-07 15:39:33,216 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.board.1222815949 uses a null category that is invalid in its context. The option was ignored.
+2022-09-07 15:39:33,353 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.mcu.1925593350 uses a null category that is invalid in its context. The option was ignored.
+2022-09-07 15:39:33,354 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.fpu.1059024783 uses a null category that is invalid in its context. The option was ignored.
+2022-09-07 15:39:33,356 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.floatabi.1897826933 uses a null category that is invalid in its context. The option was ignored.
+2022-09-07 15:39:33,357 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.board.390283820 uses a null category that is invalid in its context. The option was ignored.
+2022-09-07 15:39:33,375 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.mcu.816521159 uses a null category that is invalid in its context. The option was ignored.
+2022-09-07 15:39:33,376 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.fpu.1371410236 uses a null category that is invalid in its context. The option was ignored.
+2022-09-07 15:39:33,377 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.floatabi.11428074 uses a null category that is invalid in its context. The option was ignored.
+2022-09-07 15:39:33,378 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Option fr.ac6.managedbuild.option.gnu.cross.board.1222815949 uses a null category that is invalid in its context. The option was ignored.
+2022-09-08 12:50:01,230 [INFO] Activator:177 - 
+
+
+2022-09-08 12:50:01,232 [INFO] Activator:178 - !SESSION log4j initialized
+2022-09-08 12:50:05,636 [ERROR] AnalyticsContext:980 - The ST intranet updater server is unknown: mcucrossselector.codex.cro.st.com
+2022-09-08 14:35:08,552 [INFO] Activator:177 - 
+
+
+2022-09-08 14:35:08,554 [INFO] Activator:178 - !SESSION log4j initialized
+2022-09-08 14:35:13,375 [ERROR] AnalyticsContext:980 - The ST intranet updater server is unknown: mcucrossselector.codex.cro.st.com
+2022-09-09 08:10:07,763 [INFO] Activator:177 - 
+
+
+2022-09-09 08:10:07,766 [INFO] Activator:178 - !SESSION log4j initialized
+2022-09-09 08:10:13,330 [ERROR] AnalyticsContext:980 - The ST intranet updater server is unknown: mcucrossselector.codex.cro.st.com
+2022-09-09 08:21:02,782 [INFO] Activator:177 - 
+
+
+2022-09-09 08:21:02,785 [INFO] Activator:178 - !SESSION log4j initialized
+2022-09-09 08:21:06,943 [ERROR] AnalyticsContext:980 - The ST intranet updater server is unknown: mcucrossselector.codex.cro.st.com
+2022-09-09 10:27:21,202 [INFO] Activator:177 - 
+
+
+2022-09-09 10:27:21,204 [INFO] Activator:178 - !SESSION log4j initialized
+2022-09-09 10:27:25,569 [ERROR] AnalyticsContext:980 - The ST intranet updater server is unknown: mcucrossselector.codex.cro.st.com
+2022-09-09 12:35:36,978 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] SWT SessionManagerDBus: Failed to UnregisterClient: GDBus.Error:org.xfce.SessionManager.Error.General: Client with id of '/org/xfce/SessionClients/org_eclipse_swt_Application' was not found
+2022-09-09 12:57:52,723 [INFO] Activator:177 - 
+
+
+2022-09-09 12:57:52,725 [INFO] Activator:178 - !SESSION log4j initialized
+2022-09-09 12:57:57,715 [ERROR] AnalyticsContext:980 - The ST intranet updater server is unknown: mcucrossselector.codex.cro.st.com
+2022-09-09 17:01:17,293 [INFO] Activator:177 - 
+
+
+2022-09-09 17:01:17,297 [INFO] Activator:178 - !SESSION log4j initialized
+2022-09-09 17:01:21,823 [ERROR] AnalyticsContext:980 - The ST intranet updater server is unknown: mcucrossselector.codex.cro.st.com
+2022-09-12 13:39:52,821 [INFO] Activator:177 - 
+
+
+2022-09-12 13:39:52,823 [INFO] Activator:178 - !SESSION log4j initialized
+2022-09-12 13:39:57,570 [ERROR] AnalyticsContext:980 - The ST intranet updater server is unknown: mcucrossselector.codex.cro.st.com
+2022-09-12 16:18:53,243 [INFO] Activator:177 - 
+
+
+2022-09-12 16:18:53,246 [INFO] Activator:178 - !SESSION log4j initialized
+2022-09-12 16:18:57,835 [ERROR] AnalyticsContext:980 - The ST intranet updater server is unknown: mcucrossselector.codex.cro.st.com
